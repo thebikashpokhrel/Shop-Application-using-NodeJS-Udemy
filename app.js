@@ -13,14 +13,6 @@ const bodyParser = require("body-parser");
 const adminRoutes = require("./routes/admin");
 const shopRoutes = require("./routes/shop");
 
-db.execute("SELECT * FROM products")
-    .then(result =>{
-        console.log(result[0]);
-    })
-    .catch(err =>{
-        console.log(err);
-    })
-
 const errorController = require("./controllers/404");
 
 app.use(bodyParser.urlencoded());
