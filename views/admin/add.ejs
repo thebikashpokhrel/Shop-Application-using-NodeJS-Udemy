@@ -1,0 +1,29 @@
+<%- include('../includes/head.ejs') %>
+</head>
+<body>
+<%- include('../includes/nav.ejs') %>
+
+    <main>
+        <form action="/admin/add" method="POST">
+            <div class="form-input">
+                <h3>Add New Product</h3>
+                <label class="form-input__label" for="product">Product Name</label>
+                <input type="text" name="product" class="form-input__field" />
+            </div>
+            <div class="form-input">
+                <label class="form-input__label" for="description">Product description</label>
+                <input type="text" name="description" class="form-input__field" />
+            </div>
+            <div class="form-input">
+                <label class="form-input__label" for="price">Price</label>
+                <input type="number" name="price" class="form-input__field" />
+            </div>
+               <div class="form-input">
+                <label class="form-input__label" for="imgageURL">Image URL</label>
+                <input type="text" name="imageURL" class="form-input__field" />
+            </div>
+            <input type="submit" value="Add" class="btn" />
+        </form>
+    </main>
+
+<%- include('../includes/foot.ejs') %>

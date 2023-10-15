@@ -1,0 +1,109 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.nav-bar__items {
+  list-style-type: none;
+  background-color: #d80032;
+  display: flex;
+}
+
+.nav-bar__item {
+  padding: 15px;
+  font-size: 18px;
+}
+
+.nav-bar__item a {
+  color: white;
+  text-decoration: none;
+}
+
+.nav-bar__item:hover {
+  background-color: white;
+}
+
+.nav-bar__item:hover a {
+  color: #d80032;
+}
+
+.nav-bar__item.active{
+  background-color: white;
+}
+.nav-bar__item.active a{
+  color: #d80032;
+}
+.form-input {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  gap: 10px;
+}
+
+.form-input__label {
+  font-size: 17px;
+  font-weight: bold;
+}
+
+.form-input__field {
+  width: 50%;
+  font-size: 18px;
+  padding: 5px;
+}
+
+.btn {
+  margin: 10px;
+  padding: 5px;
+  font-size: 17px;
+  color: white;
+  cursor: pointer;
+  background-color: #d80032;
+  outline: 0;
+  border: 0;
+  width: 150px;
+  height: 40px;
+  text-align: center;
+  transition: 0.1s linear;
+}
+
+.btn:hover {
+  opacity: 0.8;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  text-align: center;
+  font-family: arial;
+  height: fit-content;
+}
+
+.price {
+  color: grey;
+  font-size: 22px;
+}
+
+.card button {
+  border: none;
+  outline: 0;
+  padding: 12px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+.card button:hover {
+  opacity: 0.7;
+}
+
+.products-list{
+  display: flex;
+  gap:20px;
+}
+
+.centered{
+  display: flex;
+  justify-content: center;
+}
