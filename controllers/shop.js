@@ -2,25 +2,29 @@ const Product = require("../models/product");
 const Cart = require("../models/cart");
 
 exports.getProducts = (req, res, next) => {
-  Product.fetchAll((products) => {
-    res.render("shop/products-list", {
-      pageTitle: "Products",
-      path: "/products",
-      products,
-      hasProducts: products.length > 0,
-    });
-  });
+  Product.fetchAll()
+    .then(([rows, fieldData]) => {
+      res.render("shop/products-list", {
+        pageTitle: "Products",
+        path: "/products",
+        products: rows,
+        hasProducts: rows.length > 0,
+      });
+    })
+    .catch((err) => console.log(err));
 };
 
 exports.getIndex = (req, res, next) => {
-  Product.fetchAll((products) => {
-    res.render("shop/index", {
-      pageTitle: "Home",
-      path: "/",
-      products,
-      hasProducts: products.length > 0,
-    });
-  });
+  Product.fetchAll()
+    .then(([rows, fieldData]) => {
+      res.render("shop/index", {
+        pageTitle: "Home",
+        path: "/",
+        products: rows,
+        hasProducts: rows.length > 0,
+      });
+    })
+    .catch((err) => console.log(err));
 };
 
 exports.getCart = (req, res, next) => {
@@ -52,13 +56,13 @@ exports.postCart = (req, res, next) => {
   res.redirect("/cart");
 };
 
-exports.postCartDelete = (req,res,next) =>{
+exports.postCartDelete = (req, res, next) => {
   const prodId = req.body.productId;
-  Product.findById(prodId,(prod)=>{
-      Cart.deleteProduct(prodId,prod.price);
-      res.redirect("/cart");
-  })
-}
+  Product.findById(prodId, (prod) => {
+    Cart.deleteProduct(prodId, prod.price);
+    res.redirect("/cart");
+  });
+};
 
 exports.getCheckout = (req, res, next) => {
   res.render("shop/checkout", {
@@ -76,11 +80,13 @@ exports.getOrders = (req, res, next) => {
 
 exports.getProduct = (req, res, next) => {
   const prodId = req.params.productId;
-  Product.findById(prodId, (product) => {
-    res.render("shop/product-detail", {
-      product: product,
-      pageTitle: "Viewing product",
-      path: "/products",
-    });
-  });
+  Product.findById(prodId)
+    .then(([product]) => {
+      res.render("shop/product-detail", {
+        product: product[0],
+        pageTitle: "Viewing product",
+        path: "/products",
+      });
+    })
+    .catch((err) => console.log(err));
 };
