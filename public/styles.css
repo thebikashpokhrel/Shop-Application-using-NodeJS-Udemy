@@ -26,10 +26,10 @@ body {
   color: #d80032;
 }
 
-.nav-bar__item.active{
+.nav-bar__item.active {
   background-color: white;
 }
-.nav-bar__item.active a{
+.nav-bar__item.active a {
   color: #d80032;
 }
 .form-input {
@@ -71,7 +71,7 @@ body {
 
 .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  max-width: 300px;
+  width: 300px;
   text-align: center;
   font-family: arial;
   height: fit-content;
@@ -98,12 +98,20 @@ body {
   opacity: 0.7;
 }
 
-.products-list{
+.products-list {
   display: flex;
-  gap:20px;
+  gap: 20px;
 }
 
-.centered{
+.centered {
   display: flex;
   justify-content: center;
+}
+
+.cart-items-list {
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
