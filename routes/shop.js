@@ -14,12 +14,12 @@ router.get("/cart", shopController.getCart);
 router.post("/cart", shopController.postCart);
 router.post("/cart-delete-item", shopController.postCartDelete);
 
-router.get("/checkout", shopController.getCheckout);
+// router.get("/checkout", shopController.getCheckout);
 router.post("/create-order", shopController.postOrder);
 
 router.get("/orders", shopController.getOrders);
 
-//Put dynamic route at end
+// //Put dynamic route at end
 router.get("/products/:productId", shopController.getProduct);
 
 module.exports = router;

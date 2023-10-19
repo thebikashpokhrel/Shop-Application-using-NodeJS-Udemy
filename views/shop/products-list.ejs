@@ -17,10 +17,10 @@
             <p>
                 <%= product.description %>
             </p>
-            <p><a href="/products/<%= product.id %>"><button>Details</button></a></p>
+            <p><a href="/products/<%= product._id %>"><button>Details</button></a></p>
             <form action="/cart" method="POST">
                 <button type="submit">Add to Cart</button>
-                <input type="hidden" name="productId" value="<%= product.id %>" />
+                <input type="hidden" name="productId" value="<%= product._id %>" />
             </form>
         </div>
     <% } %> 
